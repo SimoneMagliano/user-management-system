@@ -2,7 +2,6 @@
 create database if not exists corso_formarete; 
 /* show databases; */
 use corso_formarete;  
-
 create table if not exists User (
     userId int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     firstName varchar(255) NOT NULL,

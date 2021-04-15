@@ -8,7 +8,6 @@ class User {
     private $email;
     private $birthday;
 
-
     /**
      * Get the value of userId
      */ 
@@ -65,6 +64,46 @@ class User {
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of email
+     */ 
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set the value of email
+     *
+     * @return  self
+     */ 
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of birthday
+     */ 
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * Set the value of birthday
+     *
+     * @return  self
+     */ 
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
 
         return $this;
     }
