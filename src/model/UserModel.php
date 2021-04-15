@@ -1,13 +1,14 @@
 <?php
 
-class UserModel {
+class UserModel
+{
 
     private $conn;
 
-    public function __construct() {
+    public function __construct()
+    {
         try {
-            $this->conn = new PDO('mysql:dbname=corso_formarete;host=localhost','root','');
-            
+            $this->conn = new PDO('mysql:dbname=corso_formarete;host=localhost', 'root', '');
         } catch (\PDOException $e) {
             // TODO: togliere echo
             echo $e->getMessage();
@@ -15,22 +16,34 @@ class UserModel {
     }
 
     // CRUD
-    public function create(User $user){
-         
-        $pdostm = $this->conn->prepare('INSERT INTO User (firstName,lastName,email,birthday)
-                              VALUES (:firstName,:lastName,:email,:birthday);');
+    public function create(User $user)
+    {
 
-        $pdostm->bindValue(':firstName',$user->getFirstName(), PDO::PARAM_STR);
-        $pdostm->bindValue(':lastName', $user->getLastName(), PDO::PARAM_STR);
-        $pdostm->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
-        $pdostm->bindValue(':birthday', $user->getBirthday(), PDO::PARAM_STR);
+        try {
+            $pdostm = $this->conn->prepare('INSERT INTO User (firstName,lastName,email,birthday)
+            VALUES (:firstName,:lastName,:email,:birthday);');
 
-        $pdostm->execute();
+            $pdostm->bindValue(':firstName', $user->getFirstName(), PDO::PARAM_STR);
+            $pdostm->bindValue(':lastName', $user->getLastName(), PDO::PARAM_STR);
+            $pdostm->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
+            $pdostm->bindValue(':birthday', $user->getBirthday(), PDO::PARAM_STR);
+
+            $pdostm->execute();
+        } catch (\PDOException $e) {
+            // TODO: Evitare echo
+            echo $e->getMessage();
+        
+        }
     }
 
 
-    public function read(){}
-    public function update(){}
-    public function delete(){}
-
+    public function read()
+    {
+    }
+    public function update()
+    {
+    }
+    public function delete()
+    {
+    }
 }

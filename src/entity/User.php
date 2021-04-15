@@ -8,6 +8,12 @@ class User {
     private $email;
     private $birthday;
 
+    public function __construct($firstName,$lastName,$email,$birthday) {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->email = $email;
+        $this->birthday = $birthday;
+    }
     /**
      * Get the value of userId
      */ 
