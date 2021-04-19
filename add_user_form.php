@@ -1,3 +1,29 @@
+<?php 
+if($_SERVER['REQUEST_METHOD']==='POST'){
+   $user = UserFactory::fromArray($_POST);
+   $userValidation = new UserValidation($user);
+   
+   $userValidation->validate();
+
+   if($userValidation->isValid()){
+       $userModel = new UserModel();
+       $userModel->create($user);
+
+       // mail($user->getEmail(),"ti sei iscritto tu ?");
+       // redirect alla conferma dell'iscrizione "grazie per esserti iscritto "
+       // user_registration_success.php
+       
+   }
+
+   $firstNameValidationResult = $userValidation->firstNameValid;
+
+}
+
+if($_SERVER['REQUEST_METHOD']==='GET'){
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +35,6 @@
 
 </head>
 <body>
-    <pre>
-    <?php 
-    echo "REQUEST_METHOD:";
-    echo $_SERVER['REQUEST_METHOD']."\n";
-
-    echo "POST \n";
-    print_r($_POST);
-
-    echo "GET \n";
-    print_r($_GET);
-
-    ?>
-    </pre>
     <header>
             USM 
     </header>
@@ -30,7 +43,7 @@
             <div class="form-group">
                <label for="">Nome</label>
                <!-- is-invalid  -->
-               <input class="form-control" name="firstName"  type="text">
+               <input class="form-control"  name="firstName"  type="text">
                <div class="invalid-feedback">
                    il nome è obbligatorio
                </div> 
@@ -44,7 +57,7 @@
              </div>
              <div class="form-group">
                 <label for="">email</label>
-                <input class="form-control" name="email" type="text"> 
+                <input class="form-control"  name="email" type="text"> 
                 <div class="invalid-feedback">
                     email errata
                 </div>
