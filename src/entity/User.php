@@ -1,4 +1,7 @@
 <?php
+namespace maglianosimone\usm\entity; //PSR-4 - autoloading
+ // namespace app\usm\entity;
+// namespace src\entity;
 
 class User {
 

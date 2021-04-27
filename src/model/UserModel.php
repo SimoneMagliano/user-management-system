@@ -1,4 +1,9 @@
 <?php
+namespace maglianosimone\usm\model;
+
+use maglianosimone\usm\entity\User as EntityUser;
+use \PDO;
+use sarassoroberto\usm\entity\User;
 
 class UserModel
 {
@@ -9,6 +14,7 @@ class UserModel
     {
         try {
             $this->conn = new PDO('mysql:dbname=corso_formarete;host=localhost', 'root', '');
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
             // TODO: togliere echo
             echo $e->getMessage();
@@ -16,7 +22,7 @@ class UserModel
     }
 
     // CRUD
-    public function create(User $user)
+    public function create(EntityUser $user)
     {
 
         try {
@@ -32,6 +38,7 @@ class UserModel
         } catch (\PDOException $e) {
             // TODO: Evitare echo
             echo $e->getMessage();
+            
         
         }
     }
@@ -45,5 +52,6 @@ class UserModel
     }
     public function delete()
     {
+
     }
 }
