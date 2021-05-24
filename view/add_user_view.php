@@ -1,4 +1,3 @@
-
     <?php include '.\src\view\head.php' ?> 
     <?php include '.\src\view\header.php' ?>
     
