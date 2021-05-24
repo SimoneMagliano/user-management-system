@@ -11,26 +11,25 @@ class HobbyModel
     public function __construct()
     {
         try {
-            $this->conn = new PDO('mysql:dbname='.AppConfig::DB_NAME.';host='.AppConfig::DB_HOST, AppConfig::DB_USER, AppConfig::DB_PASSWORD);
+            $this->conn = new PDO('mysql:dbhobby='.AppConfig::DB_HOBBY.';host='.AppConfig::DB_HOST, AppConfig::DB_USER, AppConfig::DB_PASSWORD);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
-            // TODO: togliere echo
             echo $e->getMessage();
         }
     }
 
     // CRUD
-    public function create(User $user)
+    public function create(HobbyModel $hobbyModel)
     {
         try {
             $pdostm = $this->conn->prepare('INSERT INTO User (hobby)
             VALUES (:hobby);');
 
-            $pdostm->bindValue(':hobby', $user->getHobby(), PDO::PARAM_STR);
+            $pdostm->bindValue(':hobby', $hobbyModel->getNome(), PDO::PARAM_STR);
             
             $pdostm->execute();
         } catch (\PDOException $e) {
-            // TODO: Evitare echo
+           
             throw $e;
         }
     }
