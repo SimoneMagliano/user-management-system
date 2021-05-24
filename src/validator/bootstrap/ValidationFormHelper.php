@@ -1,12 +1,11 @@
 <?php
 namespace maglianosimone\usm\validator\bootstrap;
 
-use maglianosimone\usm\validator\ValidationResult as ValidatorValidationResult;
-use sarassoroberto\usm\validator\ValidationResult;
+use maglianosimone\usm\validator\ValidationResult;
 
 class ValidationFormHelper {
 
-    public static function getValidationClass(ValidatorValidationResult $validationResult)
+    public static function getValidationClass(ValidationResult $validationResult)
     {
         $value= $validationResult->getValue();
         $formControlClass = $validationResult->getIsValid() ? 'is-valid' : 'is-invalid';

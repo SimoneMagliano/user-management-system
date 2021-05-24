@@ -15,7 +15,7 @@ spl_autoload_register(function($className){
     $classPath = str_replace("sarassoroberto\usm",__DIR__."\src",$className);
     $classPath = str_replace("\\",DIRECTORY_SEPARATOR,$classPath).".php";
     //echo $classPath."<br>";
-    require $classPath;    
+    require_once $classPath;      
 });
 
 

@@ -1,4 +1,7 @@
 <?php
+
+use maglianosimone\usm\entity\User;
+
 require './src/entity/User.php';
 try {
     // READ / LIST
@@ -9,7 +12,7 @@ try {
     
     
     $stm->execute();
-    $result = $stm->fetchAll(PDO::FETCH_CLASS,'User'); // UserFactory
+    $result = $stm->fetchAll(PDO::FETCH_CLASS,User::class); // UserFactory
     // new User() id 3 
     // new User() id 4
     // new User() 

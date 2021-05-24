@@ -10,12 +10,14 @@ class User {
     private $lastName;
     private $email;
     private $birthday;
+    private $password;
 
-    public function __construct($firstName,$lastName,$email,$birthday) {
+    public function __construct($firstName,$lastName,$email,$birthday,$password) {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
         $this->birthday = $birthday;
+        $this->password = $password;
     }
     /**
      * Get the value of userId
@@ -113,6 +115,26 @@ class User {
     public function setBirthday($birthday)
     {
         $this->birthday = $birthday;
+
+        return $this;
+    }
+
+      /**
+     * Get the value of Password
+     */ 
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set the value of Password
+     *
+     * @return  self
+     */ 
+    public function setPassword($password)
+    {
+        $this->password = $password;
 
         return $this;
     }

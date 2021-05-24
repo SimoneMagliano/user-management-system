@@ -1,8 +1,4 @@
 <?php
-
-use maglianosimone\usm\entity\User;
-use maglianosimone\usm\validator\UserValidation;
-
 require __DIR__."/../../vendor/testTools/testTool.php";
 require __DIR__."/../entity/User.php";
 require __DIR__."/../validator/UserValidation.php";
