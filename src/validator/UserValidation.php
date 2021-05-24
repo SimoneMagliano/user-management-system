@@ -5,11 +5,11 @@ use maglianosimone\usm\entity\User;
 
 class UserValidation {
 
-    public const FIRST_NAME_ERROR_NONE_MSG = 'Il nome è ggiusto !!';
+    public const FIRST_NAME_ERROR_NONE_MSG = 'Il nome è corretto';
     public const FIRST_NAME_ERROR_REQUIRED_MSG = 'Il nome è obbligatorio';
     
     public const PASSWORD_ERROR_NONE_MSG = '';
-    public const PASSWORD_ERROR_REQUIRED_MSG = 'Password è obbligatoria';
+    public const PASSWORD_ERROR_REQUIRED_MSG = 'La password è obbligatoria';
 
     public const LAST_NAME_ERROR_NONE_MSG = 'Il cognome è ggiusto !!';
     public const LAST_NAME_ERROR_REQUIRED_MSG = 'Il cognome è obbligatorio';

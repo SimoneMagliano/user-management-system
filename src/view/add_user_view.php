@@ -1,6 +1,5 @@
-
-    <?php include './src/view/head.php' ?> 
-    <?php include './src/view/header.php' ?>
+    <?php include '.\head.php' ?> 
+    <?php include '.\header.php' ?>
     
     <div class="container">
 

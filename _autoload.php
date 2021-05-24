@@ -17,5 +17,5 @@ spl_autoload_register(function($className){
 
 
 );
-new EntityUser('a','b','c','d');
+new EntityUser('a','b','c','d',"e");
 ?>
