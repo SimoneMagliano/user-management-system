@@ -59,7 +59,10 @@
                   <?= $birthdayMessage ?>
                </div> 
              </div>
-
+             <div class="form-group">
+                <label for="">Interessi</label>
+                <input class="form-control <?= $hobby ?>" value="<?= $hobby ?>" name="interessi">
+             </div>
              <?php if(empty($userId)) : ?>  
              <div class="form-group">
                 <label for="">password</label>
