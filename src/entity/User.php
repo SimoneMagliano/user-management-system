@@ -138,16 +138,15 @@ class User {
 
         return $this;
     }
+    public function getHobby()
+    {
+        return $this->hobby;
+    }
+    public function setHobby($hobby)
+    {
+        $this->hobby = $hobby;
+
+        return $this;
 }
-
-  /*
-  $mario = new User();
-  $mario->setfirstName('Mario');
-  $mario->setLastName('Rossi');
-  
-  $mario = new User();
-  $mario->setfirstName('Mario')->setLastName('Rossi');
-*/   
-        ;
-
- 
+}
+?>
