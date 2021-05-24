@@ -15,7 +15,7 @@ class UserModel
             $this->conn = new PDO('mysql:dbname='.AppConfig::DB_NAME.';host='.AppConfig::DB_HOST, AppConfig::DB_USER, AppConfig::DB_PASSWORD);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
-            // TODO: togliere echo
+          
             echo $e->getMessage();
         }
     }
@@ -35,7 +35,7 @@ class UserModel
 
             $pdostm->execute();
         } catch (\PDOException $e) {
-            // TODO: Evitare echo
+           
             throw $e;
         }
     }
@@ -63,7 +63,7 @@ class UserModel
         } catch (\Throwable $th) {
             echo "qualcosa è andato storto";
             echo " ". $th->getMessage();
-            //throw $th;
+            
         }
     }
 
@@ -128,7 +128,7 @@ class UserModel
         } catch (\Throwable $th) {
             echo "qualcosa è andato storto";
             echo " ". $th->getMessage();
-            //throw $th;
+          
         }
     }
 
@@ -137,8 +137,10 @@ class UserModel
         $user = $this->findByEmail($email);
         if(!is_null($user)) {
             $passwordHash = $user->getPassword();
-            return password_verify($password,$passwordHash) ? $user : null;
+            $hash = crypt($password,$passwordHash);
+            return password_verify($hash, $passwordHash) ? $user : null;
         }
         return null;
     }
 }
+?>
