@@ -51,10 +51,10 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         }
        
     }
+    
+}
     $stmt = $db->prepare("...");
     $stmt->execute();
     $id = $db->lastInsertId();
-}
-
 include 'src/view/add_user_view.php';
 ?>
