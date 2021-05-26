@@ -16,7 +16,5 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $model->create($hobby);
     }
 }
-if($_SESSION['isLoged']==false){
-    header('location: ./login_user.php');
-}
+
 ?>
