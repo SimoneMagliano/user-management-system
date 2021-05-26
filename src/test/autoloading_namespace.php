@@ -1,6 +1,6 @@
 <?php
 
-use entity\User;
+use maglianosimone\usm\entity\User;
 
 spl_autoload_register(function($className){
     echo "sto cercando la classe $className\n\n";
@@ -11,8 +11,9 @@ spl_autoload_register(function($className){
 });
 
 
-$user = new User('Roby','Rossi','a@b.it','2020-01-01');
+$user = new User('Roby','Rossi','a@b.it','2020-01-01','');
 //$val = new UserValidation($user);
 
 //$task = new Task;
 print_r($user);
+?>

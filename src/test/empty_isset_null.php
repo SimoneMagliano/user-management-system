@@ -34,3 +34,4 @@ var_dump(empty(trim('       ')));
 // $value = 'Mario';
 // $a = isset($value);
 // var_dump($a);
+?>

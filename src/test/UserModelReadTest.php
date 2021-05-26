@@ -6,3 +6,4 @@ $userModel = new UserModel();
 $users = $userModel->readAll();
 
 print_r($users);
+?>

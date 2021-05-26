@@ -1,5 +1,5 @@
-    <?php include '.\head.php' ?> 
-    <?php include '.\header.php' ?>
+    <?php include '.\src\view\head.php' ?> 
+    <?php include '.\src\view\header.php' ?>
     
     <div class="container">
 
@@ -59,7 +59,10 @@
                   <?= $birthdayMessage ?>
                </div> 
              </div>
-
+             <div class="form-group">
+                <label for="">Interessi</label>
+                <input class="form-control <?= $hobby ?>" value="<?= $hobby ?>" name="interessi">
+             </div>
              <?php if(empty($userId)) : ?>  
              <div class="form-group">
                 <label for="">password</label>

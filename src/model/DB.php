@@ -1,8 +1,6 @@
 <?php
 namespace maglianosimone\usm\model;
-
 use maglianosimone\usm\config\local\AppConfig;
-
 class DB {
     public static function getConnection()
     {
@@ -11,16 +9,12 @@ class DB {
             $conn->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
             return $conn; 
         } catch (\PDOException $e) {
-
             throw $e;
         }
     }
-
-    
     public static function serverConnectionWithoutDatabase()
     {
-        try {
-            
+        try {    
             $conn = new \PDO('mysql:host='.AppConfig::DB_HOST, AppConfig::DB_USER, AppConfig::DB_PASSWORD);
             $conn->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
             return $conn;
@@ -29,3 +23,4 @@ class DB {
         }
     }
 }
+?>

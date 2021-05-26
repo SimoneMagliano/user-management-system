@@ -11,3 +11,4 @@ class UserFactory {
         return new User($firstName,$lastName,$email,$birthday,$password);
     }
 }
+?>

@@ -35,3 +35,4 @@ assertEquals(true,is_null($userNessuno),'Accesso Fallito per usename/email inesi
 
 
 die();
+?>
